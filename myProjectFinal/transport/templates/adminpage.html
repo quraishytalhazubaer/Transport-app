@@ -1,0 +1,388 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div  class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">Payment</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">Index</th>
+            <th scope="col">Name</th>
+            <th scope="col">Method</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Transection id</th>
+            <th scope="col">Vehicle</th>
+            <th scope="col">Date paid</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in pay %}
+            <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{j.username}}</td>
+            <td>{{j.pmethod}}</td>
+            <td>{{j.phone}}</td> 
+            <td>{{j.transection}}</td> 
+            <td>{{j.vehicle}}</td> 
+            <td>{{j.datesent}}</td> 
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+
+
+
+
+<div  class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">air bookings</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>    
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Fare</th>
+            <th scope="col">Status</th>
+            <th scope="col">Payment</th>
+            <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in ai %}
+            <tr>
+            <td>{{j.name}}</td>    
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            <td>{{j.price}}</td>
+            <td>{{j.status}}</td>
+            <td>{{j.paymentstatus}}</td>
+            <td>
+                <a class="btn btn-secondary" href="{% url 'updateairstatus' j.id %}">Update</a>
+            </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+
+    <div  class="admin">
+        <div class="container">
+            <div style="text-align: center;" class="image">
+            <img style="width: 200px;" src="" alt="">
+            </div>
+            <h3 style="text-align: center; color:red">bus bookings</h3>
+            <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                <th scope="col">Name</th>    
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Fare</th>
+                <th scope="col">Status</th>
+                <th scope="col">Payment</th>
+                <th scope="col">Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for j in bu %}
+                <tr>
+                <td>{{j.name}}</td>    
+                <td>{{j.From}}</td>
+                <td>{{j.To}}</td>
+                <td>{{j.date}}</td>
+                <td>{{j.time}}</td>
+                <td>{{j.price}}</td>
+                <td>{{j.status}}</td>
+                <td>{{j.paymentstatus}}</td>
+                <td>
+                    <a class="btn btn-secondary" href="{% url 'updatebusstatus' j.id %}">Update</a>
+                </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        
+        </div>
+        </div>
+
+
+        <div  class="admin">
+            <div class="container">
+                <div style="text-align: center;" class="image">
+                <img style="width: 200px;" src="" alt="">
+                </div>
+                <h3 style="text-align: center; color:red">launch bookings</h3>
+                <table class="table table-dark table-hover">
+                <thead>
+                    <tr>
+                    <th scope="col">Name</th>    
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Fare</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Update</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for j in la %}
+                    <tr>
+                    <td>{{j.name}}</td>    
+                    <td>{{j.From}}</td>
+                    <td>{{j.To}}</td>
+                    <td>{{j.date}}</td>
+                    <td>{{j.time}}</td>
+                    <td>{{j.price}}</td>
+                    <td>{{j.status}}</td>
+                    <td>{{j.paymentstatus}}</td>
+                    <td>
+                        <a class="btn btn-secondary" href="{% url 'updatelaunchstatus' j.id %}">Update</a>
+                    </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                </table>
+            
+            </div>
+            </div>
+
+
+            <div  class="admin">
+                <div class="container">
+                    <div style="text-align: center;" class="image">
+                    <img style="width: 200px;" src="" alt="">
+                    </div>
+                    <h3 style="text-align: center; color:red">Train bookings</h3>
+                    <table class="table table-dark table-hover">
+                    <thead>
+                        <tr>
+                        <th scope="col">Name</th>    
+                        <th scope="col">From</th>
+                        <th scope="col">To</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Time</th>
+                        <th scope="col">Fare</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Payment</th>
+                        <th scope="col">Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for j in t %}
+                        <tr>
+                        <td>{{j.name}}</td>    
+                        <td>{{j.From}}</td>
+                        <td>{{j.To}}</td>
+                        <td>{{j.date}}</td>
+                        <td>{{j.time}}</td>
+                        <td>{{j.price}}</td>
+                        <td>{{j.status}}</td>
+                        <td>{{j.paymentstatus}}</td>
+                        <td>
+                            <a class="btn btn-secondary" href="{% url 'updatetrainstatus' j.id %}">Update</a>
+                        </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    </table>
+                
+                </div>
+                </div>
+
+
+
+
+
+<div  class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">car requests</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">Name</th>    
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Date</th>
+            <th scope="col">Time</th>
+            <th scope="col">Fare</th>
+            <th scope="col">Status</th>
+            <th scope="col">Payment</th>
+            <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in ca %}
+            <tr>
+            <td>{{j.name}}</td>    
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            <td>{{j.price}}</td>
+            <td>{{j.status}}</td>
+            <td>{{j.paymentstatus}}</td>
+            <td>
+                <a class="btn btn-secondary" href="{% url 'updatecarstatus' j.id %}">Update</a>
+            </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+<div style="margin-Top: 40px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">bike requests</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>    
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Fare</th>
+                <th scope="col">Status</th>
+                <th scope="col">Payment</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in bi %}
+            <tr>
+                <td>{{j.name}}</td>    
+                <td>{{j.From}}</td>
+                <td>{{j.To}}</td>
+                <td>{{j.date}}</td>
+                <td>{{j.time}}</td>
+                <td>{{j.price}}</td>
+                <td>{{j.status}}</td>
+                <td>{{j.paymentstatus}}</td>
+                <td>
+                    <a class="btn btn-secondary" href="{% url 'updatebikestatus' j.id %}">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+<div style="margin-Top: 40px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">cng requests</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>    
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Fare</th>
+                <th scope="col">Status</th>
+                <th scope="col">Payment</th>
+                <th scope="col">Update</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in cn %}
+            <tr>
+                <td>{{j.name}}</td>    
+                <td>{{j.From}}</td>
+                <td>{{j.To}}</td>
+                <td>{{j.date}}</td>
+                <td>{{j.time}}</td>
+                <td>{{j.price}}</td>
+                <td>{{j.status}}</td>
+                <td>{{j.paymentstatus}}</td>
+                <td>
+                    <a class="btn btn-secondary" href="{% url 'updatecngstatus' j.id %}">Update</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+    <div style="margin-Top: 40px;" class="admin">
+        <div class="container">
+            <div style="text-align: center;" class="image">
+            <img style="width: 200px;" src="" alt="">
+            </div>
+            <h3 style="text-align: center; color:red">microbus requests</h3>
+            <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>    
+                    <th scope="col">From</th>
+                    <th scope="col">To</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Fare</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Payment</th>
+                    <th scope="col">Update</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for j in m %}
+                <tr>
+                    <td>{{j.name}}</td>    
+                    <td>{{j.From}}</td>
+                    <td>{{j.To}}</td>
+                    <td>{{j.date}}</td>
+                    <td>{{j.time}}</td>
+                    <td>{{j.price}}</td>
+                    <td>{{j.status}}</td>
+                    <td>{{j.paymentstatus}}</td>
+                    <td>
+                        <a class="btn btn-secondary" href="{% url 'updatemicrostatus' j.id %}">Update</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        
+        </div>
+        </div>
+
+        {% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<h3>{{msg}}</h3>
+<div style="margin: 20px;">
+<h2>List of Trains</h2>
+<table class="table table-dark" >
+    <thead>
+    <td>ID</td>
+    <td>BUS NAME</td>
+    <td>FROM</td>
+    <td>TO</td>
+    <td>SEATS</td>
+    <td>AVAILABLE</td>
+    <td>TYPE</td>
+    <td>FARE</td>
+    <td>DATE</td>
+    <td>TIME</td>
+    </thead>
+ 
+    {% for row in train_list %}
+    <tr>
+        <td>{{row.id}}</td>
+        <td>{{row.train_name}}</td>
+        <td>{{row.From}}</td>
+        <td>{{row.To}}</td>
+        <td>{{row.nos}}</td>
+        <td>{{row.rem}}</td>
+        <td>{{row.Class}}</td>
+        <td>{{row.price}}</td>
+        <td>{{row.date}}</td>
+        <td>{{row.time}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+
+<form action="{% url 'trainbookings' %}" method="post">
+    <h3>Choose bus to book</h3>
+    {% csrf_token %}
+    <div class="row">
+
+        <div class="col-md-6 multi-horizontal">
+            <label for="example-email-input" class="col-2 col-form-label">Train ID</label>
+                <input name='train_id' class="form-control" type="number" id="example-email-input">
+        </div>
+        <div class="col-md-6 multi-horizontal">
+            <label for="example-email-input" class="col-2 col-form-label">Number of seats</label>
+                <input name='no_seats' class="form-control" type="number">
+        </div>
+    
+            <button type="submit" style="width: auto; margin: 1%;" class="btn btn-success ">Confirm seats</button>
+    </div>
+</div>
+
+</form>
+
+ 
+{% endblock %}

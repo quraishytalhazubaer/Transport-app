@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block body %}
+{% load static %}
+
+
+<h2>All Transport management system</h2>
+<p>
+    This project is done by Talha Zubaer Siddique Alquraishy, Mahade Ahmed and Jobayer Hossen .
+    It focuses on the systemetic way of ticketing for all vehicles
+</p>
+
+<h1 style="text-align:center">Our Team</h1>
+<div class="card-group">
+  <div style="background-color:#335B96; margin: 10px; box-shadow: 0 8px 16px 0 #849CC0;" class="card">
+    <img class="card-img-top" src="static/imageUpload/talha.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Talha Zubaer Siddique Al-Quraishy</h5>
+      <p class="card-text">I am working as a developer and my ambition is to obtain a position as a University lecturer that will utilize my dedication to student's educational needs and development. </p>
+      <p class="card-text"><small class="text-muted">{{posting_time|timesince}} ago</small></p>
+    </div>
+  </div>
+  <div style="background-color: #335B96; margin: 10px; box-shadow: 0 8px 16px 0 #99ADCA;" class="card">
+    <img class="card-img-top" src="static/image/mahade.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Mahade Ahmed</h5>
+      <p class="card-text">I am a dedicated data science student, I wish to be a good project manager and utilize my skills effectively</p>
+      <p class="card-text"><small class="text-muted">{{posting_time|timesince}} ago</small></p>
+    </div>
+  </div>
+  <div style="background-color: #335B96; margin: 10px; box-shadow: 0 8px 16px 0 #99ADCA;" class="card">
+    <img class="card-img-top" src="static/image/Jobayer.jpg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Jobayer Hossen</h5>
+      <p class="card-text">I am a dedicated software engineer student. I am working as a software developer. I am passionate developer and am always curious and have an insatiable desire to solve problems.</p>
+      <p class="card-text"><small class="text-muted">{{posting_time|timesince}} ago</small></p>
+    </div>
+  </div>
+
+</div>
+<br><br>
+</div>
+{% endblock %}

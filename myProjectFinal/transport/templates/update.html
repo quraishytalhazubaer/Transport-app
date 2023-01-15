@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div style="margin-top: 100px; align-items: center; margin-bottom: 270px;" class="contact">
+    <div  class="container">
+<div class="row">
+	<div style="margin-left:25%" class="col-md-6">
+		<div style="background-color: #182028;" class="card card-body">
+
+			<form action="" method="POST">
+				{% csrf_token %}
+				{{form.as_p}}
+				
+				<div class="text-center">
+					<input type="submit" name="Submit">
+				</div>
+				
+			</form>
+
+		</div>
+	</div>
+</div>
+    </div>
+</div>
+
+{% endblock %}

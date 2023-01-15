@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block body %}
+
+        <div>
+
+
+          <div class="container-fluid">
+              <div style="margin-left: 20px;" class="row">
+                <div style="margin: 15px;" class="col-md-4">
+                  
+                  <div class="text-center">
+                    <h3>Distance and fare details</h3>
+                  </div>
+                  <br><br>
+
+                  <div style="border: solid;" class="row">
+                    <div style="padding-top: 15px; padding-bottom: 15px;" class="col-8 col-sm-6">
+                      Username: <br>
+                      Distance: <br>
+                      Fare: <br>
+                      Status: <br>
+                      Payment: <br>
+                    </div>
+                    <div style="padding-top: 15px; padding-bottom: 15px;" class="col-4 col-sm-6">
+                      {{username}}<br>
+                      {{distance}} KM<br>
+                      {{fare}} BDT<br>
+                      {{tickets.status}} <br>
+                      {{tickets.paymentstatus}} <br>
+                    </div>
+                  </div>
+                  <br>
+                  <a class="btn btn-info " target="_blank" href="{% url 'showcartickets' %}">Print Receipt</a>
+                  <a style="float:right;" target="_blank" class="btn btn-info " href="{% url 'payment' %}">Pay now</a>
+                </div>
+                
+                <div style="margin: 15px;" class="col-md-7">
+                  <div class="col-md-15 offset-md-0">
+                    {{m|safe}}
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+        
+{% endblock %}

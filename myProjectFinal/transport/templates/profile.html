@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div class="container">
+<div style="margin-top: 50px;" class="row">
+    <h2 style="text-align: center; color: red;">My Profile</h2>
+    <div style="text-align: center;" class="column1">
+    <br>
+    <img style="width:600px; height:600px;  border: 2px solid black;" src="{{request.user.rider.profile_pic.url}}" alt="">
+    </div>
+
+<div  class="column1">
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="">
+            <a class="btn btn-dark" href="{{request.META.HTTP_REFERER}}">Cancel</a>
+            <button style="float:right;" class="btn btn-info" type="submit">Update</button>
+        </div>
+    </form>
+    <br><br><br>
+</div>
+
+</div>
+</div>
+
+{% endblock %}

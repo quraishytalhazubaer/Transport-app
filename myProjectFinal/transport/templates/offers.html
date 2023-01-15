@@ -1,0 +1,102 @@
+{% extends 'index.html' %}
+{% block body %}
+{% load static %}
+
+<div class="pricing-plan-container">
+    <section class="pricing-plan pricing-plan">
+    <div class="pricing-plan__header">
+        <h1 class="pricing-plan__title">Dhaka to Kushtia</h1>
+         <h2 class="pricing-plan__summary">both way by bus</h2>
+    </div>
+    <div class="pricing-plan__description">
+        <ul class="pricing-plan__list">
+            <li class="pricing-plan__feature">Feature #1</li>
+            <li class="pricing-plan__feature">Feature #2</li>
+            <li class="pricing-plan__feature">Feature #3</li>
+        </ul>
+    </div>
+    <div class="pricing-plan__actions">
+        <p class="pricing-plan__cost">500 BDT only</p>
+        <p class="pricing-plan__text">Economy</p>
+        <a href="{% url 'findbus'%}" class="pricing-plan__button">Purchase</a>
+        <p class="pricing-plan__text">One time only</p>
+    </div>
+</section>
+</br>
+<section class="pricing-plan pricing-plan__highlighted">
+    <div class="pricing-plan__special-text">Recommended</div>
+    <div class="pricing-plan__header">
+        <h1 class="pricing-plan__title">Dhaka to Chittagong</h1>
+         <h2 class="pricing-plan__summary">both way by Air</h2>
+    </div>
+    <div class="pricing-plan__description">
+        <ul class="pricing-plan__list">
+            <li class="pricing-plan__feature">Feature #1</li>
+            <li class="pricing-plan__feature">Feature #2</li>
+            <li class="pricing-plan__feature">Feature #3</li>
+        </ul>
+    </div>
+    <div class="pricing-plan__actions">
+        <p class="pricing-plan__cost">3000 BDT only</p>
+        <p class="pricing-plan__text">Business class</p>
+        <a href="{% url 'findair'%}" class="pricing-plan__button">Purchase</a>
+        <p class="pricing-plan__text">One time only</p>
+    </div>
+</section>
+</br>
+<section class="pricing-plan pricing-plan">
+    <div class="pricing-plan__header">
+        <h1 class="pricing-plan__title">Dhaka to Barishal</h1>
+         <h2 class="pricing-plan__summary">both way by launch</h2>
+    </div>
+    <div class="pricing-plan__description">
+        <ul class="pricing-plan__list">
+            <li class="pricing-plan__feature">Feature #1</li>
+            <li class="pricing-plan__feature">Feature #2</li>
+            <li class="pricing-plan__feature">Feature #3</li>
+        </ul>
+    </div>
+    <div class="pricing-plan__actions">
+        <p class="pricing-plan__cost">1000 BDT only</p>
+        <p class="pricing-plan__text">A.C Cabin</p>
+        <a href="{% url 'findlaunch'%}" class="pricing-plan__button">Purchase</a>
+        <p class="pricing-plan__text">One time only</p>
+    </div>
+</section>
+</div>
+<div style="margin-left: 25%;">
+{% if request.user.is_staff %}
+<form method="POST" action="">
+    {% csrf_token %}
+<div class="form-group col-md-7">
+    <label for="phone">From</label>
+    <input type="text" name="From"  class="form-control">
+    <br>
+    <label for="Transection">To</label>
+    <input type="text" name="To"  class="form-control">
+    <br>
+    <label for="vehicle">Vehicle name</label>
+    <select style="border-radius:10px; height: fit-content;" id="vehicle" name="vehicle">
+        <option value="Select">Select</option>
+        <option value="aeroplane">aeroplane</option>
+        <option value="Bus">Bus</option>
+        <option value="launch">Launch</option>
+        <option value="train">Train</option>
+    </select>
+    <br>
+    <label for="exodate">Offer expiry date</label>
+    <input type="date" name="exodate" class="form-control">
+    <br><br>
+    <div class="text-center">
+        <button type="submit" style="width: auto; margin: 0%;" class="btn btn-success">Confirm Offer</button>
+        <br><br>
+    </div>
+</div>
+</form>
+{%endif%}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+{% endblock %}

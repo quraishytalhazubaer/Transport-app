@@ -1,0 +1,252 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div style="margin-Top: 10px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">air tickets</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Air-Name</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in a %}
+            <tr>
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.air_name}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+<div style="margin-Top: 10px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">bus tickets</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Bus Name</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in bu %}
+            <tr>
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.bus_name}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+<div style="margin-Top: 10px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">launch ticket</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Launch Name</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in la %}
+            <tr>
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.launch_name}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+<div style="margin-Top: 10px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">train ticket</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">Train Name</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in t %}
+            <tr>
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.train_name}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+<!-- <div style="margin-Top: 100px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">car requests</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in ca %}
+            <tr>
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+<div style="margin-Top: 100px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">bike requests</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in bi %}
+            <tr>
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+
+<div style="margin-Top: 100px;" class="admin">
+    <div class="container">
+        <div style="text-align: center;" class="image">
+        <img style="width: 200px;" src="" alt="">
+        </div>
+        <h3 style="text-align: center; color:red">cng requests</h3>
+        <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+            <th scope="col">From</th>
+            <th scope="col">To</th>
+            <th scope="col">date</th>
+            <th scope="col">time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for j in cn %}
+            <tr>
+            <td>{{j.From}}</td>
+            <td>{{j.To}}</td>
+            <td>{{j.date}}</td>
+            <td>{{j.time}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    
+    </div>
+    </div>
+    <div style="margin-Top: 100px;" class="admin">
+        <div class="container">
+            <div style="text-align: center;" class="image">
+            <img style="width: 200px;" src="" alt="">
+            </div>
+            <h3 style="text-align: center; color:red">microbus requests</h3>
+            <table class="table table-dark table-hover">
+            <thead>
+                <tr>
+                <th scope="col">From</th>
+                <th scope="col">To</th>
+                <th scope="col">date</th>
+                <th scope="col">time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for j in m %}
+                <tr>
+                <td>{{j.From}}</td>
+                <td>{{j.To}}</td>
+                <td>{{j.date}}</td>
+                <td>{{j.time}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+        
+        </div>
+        </div> -->
+
+{% endblock %}
+

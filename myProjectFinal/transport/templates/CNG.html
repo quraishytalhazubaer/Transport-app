@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block body %}
+    <div class="container">
+
+        <form method="POST" action="">
+
+            <h1 style="color: white;" class="text-center"> Request a CNG</h1>
+            </br>
+            <div id="form">
+                <h3 class="text-white">Booking Details</h3>
+            {% csrf_token %}
+            <div id="input">
+                <input type="text" id="From" name="From"  placeholder="From">
+                <input type="text" id="To" name="To" placeholder="To">
+                <!-- <input type="date" id="date" name="date" placeholder="Departure Date">
+                <input type="time" id="time" name="time" placeholder="Departure Time"> -->
+                
+                <br>
+
+                </br>
+
+                <button type="reset" class="btn btn-primary">Clear Form</button>
+                <button style="float:right;" type="submit" class="btn btn-success text-white">Submit Form</button>
+
+                <br>
+
+            </br>
+            </div>
+
+        </form>       
+    </div>
+{% endblock %}

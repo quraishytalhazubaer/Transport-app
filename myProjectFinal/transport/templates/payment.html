@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% block body %} 
+{% load static %}
+
+<div style="margin-top: 10px; margin-bottom: 10px; " class="contact">
+    <div class="container">
+        <h2 style="text-align: center; color: white; margin-bottom: 40px;">Payment methods</h2>
+        <div class="row">
+            <div style="margin-bottom: 20px;" class="col-sm-6">
+              <div style="background-color: #182028;" class="card">
+                <div class="card-body">
+                  <h1 class="card-title">Bkash</h1>
+                  <p class="card-text">Pay with bKash</p>
+                  <a href="{% url 'bcash' %}" class="btn btn-primary">Pay</a>
+                </div>
+              </div>
+            </div>
+  
+            <div style="margin-bottom: 20px;" class="col-sm-6">
+              <div style="background-color: #182028;" class="card">
+                <div class="card-body">
+                  <h1 class="card-title">Nagad</h1>
+                  <p class="card-text">Pay with Nagad.</p>
+                  <a href="{% url 'nagad' %}" class="btn btn-primary">Pay</a>
+                </div>
+              </div>
+            </div>
+  
+            <div style="margin-bottom: 20px;" class="col-sm-6">
+              <div style="background-color: #182028;" class="card">
+                <div class="card-body">
+                  <h1 class="card-title">CellFin</h1>
+                  <p class="card-text">Pay with CellFin.</p>
+                  <a href="{% url 'cellfin' %}" class="btn btn-primary">Pay</a>
+                </div>
+              </div>
+            </div>
+  
+            <div style="margin-bottom: 20px;" class="col-sm-6">
+              <div style="background-color: #182028;" class="card">
+                <div class="card-body">
+                  <h1 class="card-title">IBBL iBanking</h1>
+                  <p class="card-text">Pay with IBBL iBanking.</p>
+                  <a href="https://ibblportal.islamibankbd.com/indexLogin.do" class="btn btn-primary">Pay</a>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+  
+          
+    </div>
+    </div>
+    <style>
+        .card:hover{
+            color: greenyellow;
+            box-shadow: 10px 10px 20px grey;
+        }
+    </style>
+
+{% endblock %}

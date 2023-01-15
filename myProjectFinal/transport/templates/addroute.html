@@ -1,0 +1,37 @@
+{% extends 'index.html' %}
+{% block body %}
+{% load static %}
+
+
+<div>
+    <h2 style="text-align: center; border-style: ridge; border-width: 5px;">
+        Select vehicle to add route
+    </h2>
+
+    <div class="home">
+        <div class="air">
+            <a href="{% url 'air' %}"><img class="img1" src="{% static 'image/air.jpg' %}" alt="air">
+            <div class="overlay">Air</div></a>
+        </div>
+        <div class="bus">
+            <a href="{% url 'bus' %}"><img class="img1" src="{% static 'image/bus.jpg' %}" alt="Bus">
+            <div class="overlay">Bus</div></a>
+        </div>
+        <div class="launch">
+            <a href="{% url 'launch' %}"><img class="img1" src="{% static 'image/launch.jpg' %}" alt="Launch">
+            <div class="overlay">Launch</div></a>
+        </div>
+        <div class="train">
+            <a href="{% url 'train' %}"><img class="img1" src="{% static 'image/train.jpg' %}" alt="Train">
+            <div class="overlay">Train</div></a>
+        </div>
+    </div>
+</div>
+
+<div style="margin: 25px;">
+    *This page is only visible to the admins, other users are not allowed to access this page.
+    Please, be careful when adding routes and add route ensuring the availability of the vehicle.
+</div>
+
+
+{% endblock %}

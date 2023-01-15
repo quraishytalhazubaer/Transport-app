@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block body %}
+
+{% load static %}
+
+<div style="margin: 25%;" class="contact">
+    <div style="border: solid; padding: 25px; background-color: #182028; box-shadow: 5px 5px 16px 5px #888888" class="position-absolute top-50 start-50 translate-middle">
+        <div class="row">
+            <div class="">
+                     <h2 style="color: red;"> Are you sure to delete the comment ?</h2>
+                     <br>
+
+                     <p>
+                         Deleting the comment will permanently remove user name, user detail as well as the message and it can not be recovered. 
+                         Be sure before entering submit button.
+                     </p>
+                <br>
+                <form method="POST">                    
+                    {% csrf_token %}
+                    <div class="d-block">
+                        <a class="btn btn-secondary" href="{{request.META.HTTP_REFERER}}">Cancel</a>
+                        <input style="float:right;" type="submit" name="Confirm">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

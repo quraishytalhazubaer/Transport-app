@@ -1,0 +1,17 @@
+{% block title %}
+    Calculate distance
+{% endblock title %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+    {{distance}}
+
+
+<hr>
+<form action = ""  method="POST" autocomplete="off">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit" class="btn btn-primary">Confirm</button>
+</form>
+{% endblock content %}
+

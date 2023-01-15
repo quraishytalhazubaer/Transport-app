@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div class="container" >
+        <form method="post" class="form-group" action="">
+            {% csrf_token %}
+            <h1 style="color: white;" class="text-center">Add tickets for launch</h1>
+            </br>
+            <div class="block mbr-form" id="form">
+                <h3 class="text-white">Details</h3>
+ 
+            <div id="input" class="row">
+                <div class="col-md-6 multi-horizontal">
+                    <input type="text" id="From" name="From"  placeholder="From">
+                </div>
+                <div class="col-md-6 multi-horizontal">
+                    <input type="text" id="To" name="To" placeholder="To">
+                </div>
+
+                <div class="col-md-6 multi-horizontal">
+                    <input type="text" id="launch_name" name="launch_name" placeholder="Launch Name">
+                </div>
+                
+                <div class="col-md-6 multi-horizontal">
+                    <input type="text" id="price" name="price" placeholder="Price of ticket">
+                </div>
+
+                <div class="col-md-6 multi-horizontal">
+                    <input type="number" id="nos" name="nos" placeholder="no of seats in the bus">
+                </div>
+                
+                <div  class="col-md-6 multi-horizontal">
+                    <select style="border-radius:10px; height: fit-content;" id="type" name="type">
+                        <option value="None">Select class</option>
+                        <option value="Economy">Economy</option>
+                        <option value="Business">Business</option>
+                        <option value="Cabin">A.C Cabin</option>
+                    </select>
+                </div>
+                
+               <div style="margin-top: 20px;  margin-bottom: 20px;" class="col-md-6 multi-horizontal">
+                   <input class="col-md-6 multi-horizontal" style="width:100%;" type="date" id="date" name="date" placeholder="Departure Date">
+               </div>
+               <div style="margin-top: 20px; margin-bottom: 20px;" class="col-md-6 multi-horizontal">
+                <input class="col-md-6 multi-horizontal" style="width:100%;" type="time" id="time" name="time" placeholder="Departure Time">
+               </div>
+                    
+                <br>
+                </br>
+                <!-- <div class="d-md-block"> -->
+                <div class="clearfix">
+                    <button type="reset" class="btn btn-warning mx-2">Clear Form</button>
+                    <button style="float: right;" type="submit" class="btn btn-success mx-2">Submit Form</button>
+                </div>
+                
+            </div>
+
+        </form>
+    </div>
+{% endblock %}

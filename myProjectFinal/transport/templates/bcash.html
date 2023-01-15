@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% block body %}
+
+<div style="margin-left:100px">
+<img src="https://d1c9i2hjt1qll5.cloudfront.net/images/1614335112385-BKash-Limited.png" alt="bkash image">
+<br><br>
+<div class="text-center col-md-7">
+    <h2>Bkash payment</h2>
+</div>
+<br>
+
+আপনার বিকাশ একাউন্ট থেকে পেমেন্ট বিকাশ করতে নীচের ধাপগুলো অনুসরণ করুন-
+<br>
+
+১। *২৪৭# ডায়াল করে বিকাশ মোবাইল মেন্যুতে যান<br>
+
+২। “পেমেন্ট” সিলেক্ট করুন<br>
+
+৩। মার্চেন্ট পেমেন্ট অপশনে "01788462012" লিখুন<br>
+
+৪। আপনি যে পরিমাণ টাকা পেমেন্ট করতে চান তার পরিমাণ লিখুন<br>
+
+৫। আপনার কেনাকাটার একটি তথ্যসূত্র দিন (আপনি আপনার লেনদেনের উদ্দেশ্য একটি শব্দের মধ্যে উল্লেখ করতে পারেন, উদাহরণস্বরূপ, বিল)*<br>
+
+৬। কাউন্টার নাম্বারটি লিখুন (কাউন্টারে অবস্থানরত বিক্রেতা আপনাকে নাম্বারটি বলে দেবেন)*<br>
+
+৭। আপনার বিকাশ মোবাইল মেন্যু পিনটি দিয়ে পেমেন্ট সম্পন্ন করুন<br>
+
+আপনি বিকাশ থেকে একটি কনফার্মেশন মেসেজ পাবেন।<br>
+
+*যদি তথ্যসূত্র বা কাউন্টার নাম্বার কিংবা দুটোই প্রযোজ্য না হয়, তাহলে আপনি এই ধাপগুলো “০” প্রবেশ করিয়ে এরিয়ে যান।<br>
+<br>
+
+অথবা বিকাশ অ্যাপ ব্যবহার করে পেমেন্ট অপশনে গিয়ে "01788462012" নাম্বারে পেমেন্ট করুন । <br>
+
+অতঃপর নিম্নে দেয়া ফরমটি পূরণ করুন । <br><br>
+
+<h1>Payment confermation form</h1>
+
+<form method="POST" action="">
+    {% csrf_token %}
+
+<div class="form-group col-md-7">
+    <label for="username">Username</label>
+    <input type="text" name="username"  class="form-control">
+    <br>
+    <label for="phone">Phone</label>
+    <input type="number" name="phone"  class="form-control">
+    <br>
+    <label for="Transection">Transection id</label>
+    <input type="text" name="transection"  class="form-control">
+    <br>
+    <label for="vehicle">Vehicle name</label>
+    <select style="border-radius:10px; height: fit-content;" id="vehicle" name="vehicle">
+        <option value="Select">Select</option>
+        <option value="aeroplane">aeroplane</option>
+        <option value="Bus">Bus</option>
+        <option value="launch">Launch</option>
+        <option value="train">Train</option>
+        <option value="car">Car</option>
+        <option value="bike">Bike</option>
+        <option value="cng">CNG</option>
+        <option value="microbus">Microbus</option>
+    </select>
+    <br>
+    <label for="dateused">Date sent</label>
+    <input type="date" name="dateused"  class="form-control">
+    <br>
+
+    <div class="text-center">
+    <button type="submit" style="width: auto; margin: 0%;" class="btn btn-success">Confirm Payment</button>
+    <br><br>
+    </div>
+
+</div>
+
+</form>
+
+{% endblock %}

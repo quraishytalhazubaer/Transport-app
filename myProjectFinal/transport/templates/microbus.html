@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block body %}
+    <div class="container">
+
+        <form method="POST" action="">
+
+            <h1 style="color: white;" class="text-center">Request a Microbus</h1>
+            </br>
+            <div id="form">
+                <h3 class="text-white">Booking Details</h3>
+            {% csrf_token %}
+            <div id="input" class="container">
+                <input type="text" id="From" name="From"  placeholder="From">
+                <input type="text" id="To" name="To" placeholder="To">
+
+                <input style="height: 50px;" class="col-md-5 multi-horizontal text-center" type="date" id="date" name="date" placeholder="Departure Date">
+                <input style="height: 50px; float:right;" class="col-md-5 multi-horizontal text-center" type="time" id="time" name="time" placeholder="Departure Time">
+                
+                <br>
+
+                </br>
+                <button style="width:auto;" type="reset" class="btn btn-primary">Clear Form</button>
+                <button style="width:auto; float: right;" type="submit" class="btn btn-success text-white">Submit Form</button>
+                <br>
+
+            </br>
+            </div>
+
+        </form>       
+    </div>
+{% endblock %}

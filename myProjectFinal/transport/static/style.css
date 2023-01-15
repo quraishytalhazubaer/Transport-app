@@ -1,0 +1,424 @@
+:root {
+    --color-main: #71c6dd;
+    --color-main-light: #e1f6fb;
+    --color-dark: #3f4156;
+    --color-dark-medium: #51546e;
+    --color-dark-light: #696d97;
+    --color-light: #e5e5e5;
+    --color-gray: #8b8b8b;
+    --color-light-gray: #b2bdbd;
+    --color-bg: #2d2d39;
+    --color-success: #5dd693;
+    --color-error: #fc4b0b;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #3f4156;
+    color: #e5e5e5;
+}
+
+
+div {
+    display: block;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+.home {
+    position: relative;
+    left: 0;
+    top: auto;
+    width: 100%;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+    padding: 1% 5%;
+    height: 100%;
+    color: #2d2d39;
+}
+
+
+.searchVehiclehome {
+    color: white;
+    position: absolute;
+    width: 50%;
+    padding: 50px;
+    display: block;
+    height: 760px;
+    background-color: #2d2d39;
+}
+
+
+
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.main {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 300px));
+    column-gap: 10px;
+    row-gap: 10px;
+    padding: 1% 5%;
+}
+
+
+
+.overlay {
+    position: relative;
+    bottom: 0;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5); /* Black see-through */
+    color: #f1f1f1;
+    width: 100%;
+    opacity: 0;
+    font-size: 20px;
+    padding: 20px;
+    display: block;
+
+}
+
+.air:hover .overlay {
+    opacity: 1;
+}
+
+.bus:hover .overlay {
+    opacity: 1;
+}
+
+.launch:hover .overlay {
+    opacity: 1;
+}
+
+.train:hover .overlay {
+    opacity: 1;
+}
+
+.car:hover .overlay {
+    opacity: 1;
+}
+
+.bike:hover .overlay {
+    opacity: 1;
+}
+
+.CNG:hover .overlay {
+    opacity: 1;
+}
+
+.microbus:hover .overlay {
+    opacity: 1;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    float: right;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password], input[type=number], input[type=email] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+/* Set a style for all buttons */
+
+
+button:hover {
+    opacity: 0.8;
+}
+
+.img1 {
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+    object-position: center;
+    transition: .5s ease;
+    text-align: center;
+    box-shadow: 5px 5px;
+}
+
+
+.img2 {
+    position:relative;
+    width: 700px;
+    height: 700px;
+    margin-right: 20px;
+    padding: 20px;
+    object-position: center;
+    transition: .5s ease;
+    text-align: center;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--color-dark);
+    color: white;
+    border-radius: 35px;
+    margin: 15% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #171515;
+    width: 100%; /* Could be more or less, depending on screen size */
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+
+}
+
+#regbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: forestgreen;
+    float: right;
+    border-radius: 50px;
+    position: relative;
+    right: 10px;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+
+}
+
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
+}
+
+  
+  /* Style the container/contact section */
+  .container {
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+
+  .txt-white{
+  color: white;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .column1 {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .contact-row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .contact-column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+
+
+.animate-border {
+    position: relative;
+    display: block;
+    width: 115px;
+    height: 3px;
+    background: #007bff; }
+  
+  .animate-border:after {
+    position: absolute;
+    content: "";
+    width: 35px;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    border-left: 10px solid #fff;
+    border-right: 10px solid #fff;
+    -webkit-animation: animborder 2s linear infinite;
+    animation: animborder 2s linear infinite; }
+
+
+.pricing-plan {
+    width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: wheat;
+    margin: 15px;
+}
+
+.pricing-plan__highlighted {
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+   transform: scale(1.05);
+}
+
+.pricing-plan__special-text {
+   padding: 10px;
+   text-align: center;
+   font-weight: bold;
+   color: #ffffff;
+   background: #007c64;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2) inset;
+
+}
+
+.pricing-plan__header{
+
+   padding: 25px;
+   background: #009578;
+   color: #ffffff;
+}
+
+.pricing-plan__title,
+.pricing-plan__summary{
+   margin: 0;
+   text-align: center;
+}
+
+.pricing-plan__title{
+   font-size: 1.5em;
+   font-weight: 400;
+}
+
+.pricing-plan__summary{
+   font-size: 1em;
+   font-weight: 300;
+}
+
+.pricing-plan__description {
+   padding: 25px;
+}
+
+.pricing-plan__list{
+   padding: 0;
+   margin: 0;
+}
+
+.pricing-plan__feature{
+   list-style: none;
+   margin: 0;
+   padding-left: 25px;
+   position: relative;
+   font-size: 0.9em;
+}
+
+.pricing-plan__feature:not(:last-child) {
+   margin-bottom: 0.5em;
+}
+
+.pricing-plan__feature::before {
+   content: "\2714";
+   color: #009578;
+   position: absolute;
+   left: 0;
+}
+
+.pricing-plan__actions {
+   padding: 25px;
+   border-top: 1px solid #eeeeee;
+   display: flex;
+   flex-direction: column;
+}
+
+.pricing-plan__button {
+   display: inline-block;
+   margin: 15px auto;
+   padding: 8px 20px;
+   text-decoration: none;
+   color: #009578;
+   background: #ffffff;
+   border-radius: 5px;
+   border: 1px solid #009578;
+   text-transform: uppercase;
+   letter-spacing: 0.02em;
+   font-weight: bold;
+}
+
+.pricing-plan__button:hover {
+   background: #009578;
+   color: #ffffff;
+}
+
+.pricing-plan__cost {
+   margin: 0;
+   text-align: center;
+   font-size: 2em;
+   color: yellow;
+}
+
+.pricing-plan__text {
+   font-size: 0.9em;
+   text-align: center;
+   margin: 0 0 10px 0;
+}
+
+.pricing-plan-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: 10px;
+}

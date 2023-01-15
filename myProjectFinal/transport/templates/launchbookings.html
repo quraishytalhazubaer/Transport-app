@@ -1,0 +1,92 @@
+{% extends 'index.html' %}
+{% block body %}
+
+
+<div style="margin:50px;">
+ 
+    {% csrf_token %}
+    <h2 style="text-align:center">Your booking has been confirmed!</h2>
+    <!-- <h2>Thank you!</h2> -->
+ 
+<!-- Button trigger modal -->
+<div class="text-center">
+<button style="width: auto;" type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModalCenter">See Details </button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div style="background-color: #3f4156;" class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Ticket details</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-sm-9">
+            *Please ensure the ticket details.<br>
+            <div class="row">
+              <div class="col-8 col-sm-6">
+                Launch name: <br>
+                From: <br>
+                To: <br>
+                Date: <br>
+                Time: <br>
+                No of seats: <br>
+                Type<br>
+                Fare:  <br>
+                Total Fare: <br>
+              </div>
+              <div class="col-4 col-sm-6">
+                {{book.launch_name}}<br>
+                {{book.From}}<br>
+                {{book.To}}<br>
+                {{book.date}}<br>
+                {{book.time}}<br>
+                {{book.nos}}<br>
+                {{type}}<br>
+                {{book.price}} <br>
+                {{cost}}<br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <a href="{% url 'showlaunchtickets'%}" target="_blank" class="btn btn-primary">View ticket</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="padding: 20px;" class="container">
+  <p>
+    <h5>No Show</h5>
+      The Ticket will be automatically cancelled if the passenger fails to report at the boarding station 20 minutes before scheduled departure time. In such cases, bus operators’ opinion will be counted as final.<br><br>
+    <h5>Failure to Pay</h5>
+      1. No ticket will be activated unless the customer has paid the full amount mentioned on the ticket.<br>
+      2. For mobile payments, it is the responsibility of the customer to verify and activate his ticket himself. atms.com sometimes does the verification for the customer as a courtesy, but it is not atms.com’s responsibility or service promise.<br>
+      
+      3. Tickets will be automatically canceled if customer does not confirm payment within 30 minutes of reservation in case of mobile payments, 15 minutes in case of internet banking and upon arrival of delivery man, in case of COD. For mobile payments customer must complete payment and also verify ticket within this stipulated time. <br>
+      4. During Eid sales month, atms.com will not do any verifications on behalf of the customers.<br>
+  </p>
+</div>
+
+<div style="text-align: right; margin: 50px;" class="">
+  <a href="{% url 'payment' %}" class="btn btn-primary float-right">Pay now</a>
+</div>
+
+</div>
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+{% endblock %}
+ 
+

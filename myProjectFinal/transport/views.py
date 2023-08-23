@@ -24,6 +24,8 @@ from transport.models import *
 
 from django.db.models import Q
 
+from django.http import JsonResponse
+import requests
 
 def numOfDays(date1, date2):
     return (date2-date1).days
@@ -1178,3 +1180,37 @@ def updatetrainstatus(request, pk):
 	context = {'form':form}
 	return render(request, 'update.html', context)
 
+
+@csrf_exempt
+def chat(request):    
+    if request.method == 'POST':
+        #user = request.user
+        user_message = request.POST.get('message')  # Assuming the user's message is sent as 'message'
+        print(user_message)
+        # Send the user message to your Node.js application
+        node_url = 'http://localhost:3001/bot'  # Replace with your Node.js application's URL
+        response = requests.post(node_url, json={'message': user_message})
+        
+        if response.status_code == 200:
+            data = response.json()
+            print(data)
+            bot_response = data.get('response')  # Get the bot's response from the JSON data
+            
+            #user=user,
+            conversation = Conv( user_message = user_message,response=bot_response)
+            conversation.save()
+
+            c = Conv.objects.all()
+            print(c)
+            #'user':user, 'user_message': user_message, 'bot_response':bot_response
+            context = {'c':c}
+            return render (request,'chat.html',context)
+
+
+            # Render chat.html template with user_message and bot_response
+            #return render(request, 'chat.html', {'user_message': user_message, 'bot_response': bot_response})
+    
+    
+    messages.success(request, "'error': 'Invalid request method.")
+    #return JsonResponse({'error': 'Invalid request method'})
+    return render(request, 'chat.html')

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load static %}
+    <title>Chat with Bot</title>
+</head>
+<body>
+    <h1>Chat with Bot</h1>
+    <div id="chat-box">
+        {% for c in c %}
+            <p class="user-message">{{ c.user_message }}</p>
+            <p class="bot-message">{{ c.response }}</p>
+            <p>{{c.timestamp}}</p> 
+        {% endfor %}
+    </div>
+    <form id="user-input-form" action="{% url 'chat' %}" method="POST">
+        {% csrf_token %}
+        <input type="text" name="message" placeholder="Type your message..." required>
+        <button type="submit">Send</button>
+    </form>
+</body>
+</html>

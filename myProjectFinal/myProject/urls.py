@@ -30,7 +30,7 @@ urlpatterns = [
     path('nagad',nagad,name='nagad'),
     path('cellfin',cellfin,name='cellfin'),
     path('searchresult',searchresult,name='searchresult'),
-
+    path('chat/', chat, name='chat'),
     
 
 

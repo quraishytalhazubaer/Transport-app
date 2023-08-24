@@ -58,7 +58,8 @@
                 <li class="nav-item"><a href="{% url 'availableroutes' %}" class="nav-link px-2 text-white">Available Routes</a></li>
                 <li class="nav-item"><a  href="{% url 'payment' %}" class="nav-link px-2 text-white ">Payment</a></li>
                 <li class="nav-item"><a  href="{% url 'contact' %}" class="nav-link px-2 text-white">Contact Us</a></li>
-
+                <li class="nav-item"><a  href="{% url 'chat' %}" class="nav-link px-2 text-white">Chat with Bot</a></li>
+                
                 {% if request.user.is_staff %}
                 <li class="nav-item"><a  href="{% url 'adminpage' %}" class="nav-link px-2 text-white ">Admin</a></li>
                 <li class="nav-item"><a  href="{% url 'addroute' %}" class="nav-link px-2 text-white ">Add route</a></li>

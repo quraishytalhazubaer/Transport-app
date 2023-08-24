@@ -1181,10 +1181,11 @@ def updatetrainstatus(request, pk):
 	return render(request, 'update.html', context)
 
 
+@login_required(login_url='handleLogin')
 @csrf_exempt
 def chat(request):    
     if request.method == 'POST':
-        #user = request.user
+        user = request.user.rider
         user_message = request.POST.get('message')  # Assuming the user's message is sent as 'message'
         print(user_message)
         # Send the user message to your Node.js application
@@ -1195,9 +1196,8 @@ def chat(request):
             data = response.json()
             print(data)
             bot_response = data.get('response')  # Get the bot's response from the JSON data
-            
-            #user=user,
-            conversation = Conv( user_message = user_message,response=bot_response)
+                
+            conversation = Conv(user=user, user_message = user_message,response=bot_response)
             conversation.save()
 
             c = Conv.objects.all()
@@ -1209,8 +1209,8 @@ def chat(request):
 
             # Render chat.html template with user_message and bot_response
             #return render(request, 'chat.html', {'user_message': user_message, 'bot_response': bot_response})
+        else:
+            messages.success(request, "Sorry, Could not reach the server !")
     
-    
-    messages.success(request, "'error': 'Invalid request method.")
     #return JsonResponse({'error': 'Invalid request method'})
     return render(request, 'chat.html')

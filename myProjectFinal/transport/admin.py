@@ -6,6 +6,7 @@ from .models import *
 admin.site.register(Measurement)
 admin.site.register(Rider)
 admin.site.register(Contact)
+admin.site.register(Conv)
 
 admin.site.register(Air)
 admin.site.register(Bus)

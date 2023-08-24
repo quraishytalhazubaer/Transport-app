@@ -367,10 +367,10 @@ class Train_Book(models.Model):
 
 
 class Conv(models.Model):
-    #user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(Rider, on_delete=models.CASCADE)
     user_message = models.TextField()
     response = models.TextField()
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.user_message}"
+        return f"{self.user}-{self.user_message}"

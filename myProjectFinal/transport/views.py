@@ -1214,3 +1214,91 @@ def chat(request):
     
     #return JsonResponse({'error': 'Invalid request method'})
     return render(request, 'chat.html')
+
+
+@csrf_exempt
+def webhook(request):
+    # Parse the incoming JSON request from Dialogflow
+    req = json.loads(request.body)
+    #print(req)
+    # Get the action from the JSON data
+    action = req.get('queryResult').get('action')
+    
+    if action == 'FindBus':
+        departure_location = req.get('queryResult').get('parameters').get('DepartureLocation')
+        destination = req.get('queryResult').get('parameters').get('Destination')
+        print(departure_location[0])
+        print(destination[0])
+
+        # Fetch bus information based on departure location and destination
+        bus_info = Bus.objects.filter(From=departure_location[0], To=destination[0])
+        if bus_info:
+            response_text = []
+            #response_text = f"Buses available from {departure_location[0]} to {destination[0]}:\n"
+            for bus in bus_info:
+                response_text.append(f"{bus.bus_name} {bus.date} {bus.time}\n")
+                #response_text += f"- Bus name {bus.bus_name}, Departure: {bus.date}-{bus.time}\n"
+            print(response_text[0])
+        else:
+            response_text = f"No buses found from {departure_location} to {destination}."
+    else:
+        response_text = "I'm sorry, I didn't quite catch that."
+    
+    # Construct the Dialogflow webhook response
+    fulfillmentText = {
+        # 'fulfillmentText': response_text
+        "fulfillmentMessages": 
+        [
+            {
+                "text": 
+                    {
+                        "text": [response_text[0]]          
+                    }
+            },
+                       {
+            "card": {
+                "title": "Product Details",
+                "subtitle": "Product ABC",
+                "imageUri": "https://static.busbd.com.bd/busbdmedia/16991652_1397658293641231_1205628201074067845_o.1501711430",
+                "buttons": [
+                {
+                    "text": "Buy Now",
+                    "postback": "https://f513-103-85-159-146.ngrok-free.app/"
+                },
+                {
+                    "text": "More Info",
+                    "postback": "https://www.hanifenterprise.com/"
+                }
+
+                ]
+            }
+            },
+            {
+                "text": 
+                    {
+                        "text": [response_text[1]]          
+                    }
+            },            
+            {
+            "card": {
+                "title": "Product Details",
+                "subtitle": "Product ABC",
+                "imageUri": "https://chokrojan-bucket.s3.ap-southeast-1.amazonaws.com/company/slides/he_place_slide_2.jpg",
+                "buttons": [
+                {
+                    "text": "Buy Now",
+                    "postback": "https://f513-103-85-159-146.ngrok-free.app/"
+                },
+                {
+                    "text": "More Info",
+                    "postback": "https://www.hanifenterprise.com/"
+                }
+
+                ]
+            }
+            }
+
+        ]
+    }
+    # Return the response
+    return JsonResponse(fulfillmentText, safe=False).

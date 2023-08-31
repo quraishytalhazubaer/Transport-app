@@ -31,10 +31,9 @@ urlpatterns = [
     path('cellfin',cellfin,name='cellfin'),
     path('searchresult',searchresult,name='searchresult'),
     path('chat/', chat, name='chat'),
+    path('webhook/', webhook, name='webhook'),
+
     
-
-
-
     path('air',air,name='air'),
     path("update_airstatus/<str:pk>/",updateairstatus,name='updateairstatus'),
     path('findair', findair, name="findair"),

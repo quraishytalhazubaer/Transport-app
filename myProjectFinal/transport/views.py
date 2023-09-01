@@ -10,6 +10,7 @@ from django.contrib.auth  import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .helper import send_forget_password_mail
 
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render,redirect,get_object_or_404
 import folium
 import geocoder
@@ -25,6 +26,7 @@ from transport.models import *
 from django.db.models import Q
 
 from django.http import JsonResponse
+import json
 import requests
 
 def numOfDays(date1, date2):
@@ -1301,4 +1303,4 @@ def webhook(request):
         ]
     }
     # Return the response
-    return JsonResponse(fulfillmentText, safe=False).
+    return JsonResponse(fulfillmentText, safe=False)

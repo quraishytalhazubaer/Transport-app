@@ -1304,3 +1304,18 @@ def webhook(request):
     }
     # Return the response
     return JsonResponse(fulfillmentText, safe=False)
+
+def get_orm_object_by_action(request, model_name):
+    try:
+        # model = apps.get_model(app_label='transport', model_name=model_name)
+        if True:
+            objects = Bus.objects.all()
+
+            # Convert each model instance to JSON using the utility function
+            serialized_objects = [model_to_json(obj) for obj in objects]
+
+            return JsonResponse({'result': 'success', 'data': serialized_objects})
+        else:
+            return JsonResponse({'result': 'error', 'message': 'Model not found'})
+    except Exception as e:
+        return JsonResponse({'result': 'error', 'message': str(e)})

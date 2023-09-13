@@ -33,7 +33,6 @@ urlpatterns = [
     path('chat/', chat, name='chat'),
     path('webhook/', webhook, name='webhook'),
     path('get_orm_object_by_action/<str:model_name>', get_orm_object_by_action, name='get_orm_object_by_action'),
-
     
     path('air',air,name='air'),
     path("update_airstatus/<str:pk>/",updateairstatus,name='updateairstatus'),

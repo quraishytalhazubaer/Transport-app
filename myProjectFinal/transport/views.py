@@ -1305,7 +1305,6 @@ def webhook(request):
     # Return the response
     return JsonResponse(fulfillmentText, safe=False)
 
-
 def get_orm_object_by_action(request, model_name):
     try:
         # model = apps.get_model(app_label='transport', model_name=model_name)

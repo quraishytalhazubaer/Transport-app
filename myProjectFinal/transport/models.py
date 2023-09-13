@@ -4,6 +4,25 @@ from django.db.models.fields import DateTimeField
 from django.contrib.auth.models import  User
 # Create your models here.
 
+from django.core import serializers
+import json
+
+def model_to_json(model_instance):
+    """
+    Convert a Django model instance to a JSON representation.
+    """
+    # Serialize the model instance to a JSON string
+    serialized_data = serializers.serialize('json', [model_instance])
+
+    # Deserialize the JSON string and extract the object's fields
+    deserialized_data = json.loads(serialized_data)
+    model_data = deserialized_data[0]['fields']
+
+    # Include the model's primary key
+    model_data['id'] = model_instance.pk
+
+    return model_data
+
 class Measurement (models.Model):
     location  = models.CharField(max_length=200)
     destination = models.CharField(max_length=200)
